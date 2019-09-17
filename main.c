@@ -180,18 +180,22 @@ int main()
             //Calcula se o número é primo ou não
             case 8 :{
                 int i, numPri, aux = 0;
-
-                printf("Digite o número que você deseja verificar se é primo: ");
-                scanf("%d", &numPri);
-
-                for(i = 2; i<numPri; i++){
-
+                
+                do{
+                    printf("Digite o número que você deseja verificar se é primo: ");
+                    scanf("%d", &numPri);
+                    
+                    if(numPri<=0){
+                        printf("Número inválido\n");
+                    }
+                }while(numPri <= 0);
+                
+                for(i = 2; i<numPri/2; i++){
                     if(numPri%i == 0){
-
                         aux++;
+                        break;
                     }
                 }
-
                 if(aux == 0){
 
                     printf("\nO número %d é primo.", numPri);
